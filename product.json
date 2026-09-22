@@ -1,0 +1,62 @@
+{
+  "name": "Bulk Phone Number Validation",
+  "brand": "NumDetect",
+  "repository": "numdetect/phone-bulk-validation-api",
+  "description": "A clean list is the start of the next campaign. Check validity and activation signals to find records worth reviewing, then feed the structured result into list cleaning, CRM updates and pre-outreach checks so every action starts with clearer data.",
+  "official_site": "https://numdetect.com",
+  "landing_page": "https://numdetect.com/products/number_validation_batch",
+  "canonical_docs": "https://numdetect.com/api-docs",
+  "base_url": "https://numdetect.com",
+  "auth": {
+    "type": "api_key",
+    "header": "X-API-Key"
+  },
+  "mode": "async-bulk",
+  "product": "number_validation_batch",
+  "identifier_kind": "phone",
+  "requires_country": true,
+  "endpoints": {
+    "submit": {
+      "method": "POST",
+      "path": "/api/v1/bulk-tasks"
+    },
+    "status": {
+      "method": "GET",
+      "path": "/api/v1/bulk-tasks/{id}"
+    },
+    "balance": {
+      "method": "GET",
+      "path": "/api/v1/balance"
+    }
+  },
+  "limits": {
+    "min_items": 500,
+    "max_items": 100000,
+    "poll_interval_seconds": 30,
+    "file_formats": [
+      "txt",
+      "csv"
+    ]
+  },
+  "result_fields": [
+    {
+      "name": "number",
+      "example": "17253100591",
+      "description": "The original submitted E.164 number. Use it to match and trace the result back to the uploaded record; the field alone does not establish that a number can be contacted."
+    },
+    {
+      "name": "activated",
+      "example": "yes",
+      "description": "Whether this check returned an activation signal. Combine it with your own consent, source and recent-interaction data for review or segmentation, not as a guarantee of connection or delivery."
+    }
+  ],
+  "statuses": [
+    "processing",
+    "success",
+    "failed"
+  ],
+  "pricing_url": "https://numdetect.com/pricing",
+  "maintainer": "NumDetect",
+  "license": "MIT",
+  "last_reviewed": "2026-09-22"
+}

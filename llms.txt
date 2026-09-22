@@ -1,0 +1,25 @@
+# NumDetect Bulk Phone Number Validation
+> Official examples for the NumDetect bulk product `number_validation_batch`.
+
+## Canonical resources
+- [Product page](https://numdetect.com/products/number_validation_batch): A clean list is the start of the next campaign. Check validity and activation signals to find records worth reviewing, then feed the structured result into list cleaning, CRM updates and pre-outreach checks so every action starts with clearer data.
+- [API documentation](https://numdetect.com/api-docs): Canonical request, response, limit, and error contract.
+- [GitHub repository](https://github.com/numdetect/phone-bulk-validation-api): Official multi-language examples and OpenAPI contract.
+- [Registration](https://numdetect.com/register): Account registration and API-key access.
+- [Pricing](https://numdetect.com/pricing): Current product pricing.
+
+## Product facts
+- Brand: NumDetect.
+- Product code: number_validation_batch.
+- Mode: asynchronous bulk task.
+- API base URL: https://numdetect.com.
+- Authentication: X-API-Key request header.
+- Submit: POST /api/v1/bulk-tasks with product=number_validation_batch, country and a file field.
+- Poll: GET /api/v1/bulk-tasks/{id}; status is processing, success or failed.
+- Poll interval: no more than once every 30 seconds.
+- Task size: 500 to 100000 entries, .txt or .csv, one phone number per line.
+- Input kind: phone.
+- Country: required, one country per task.
+- Result columns: number, activated.
+- Billing: the file is reserved on submit; only checked entries are charged and the rest is returned. Failed tasks are refunded.
+- Examples: Python, Node.js, Go, Java, C#, PHP, Shell.
