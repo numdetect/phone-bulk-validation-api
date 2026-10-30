@@ -1,5 +1,5 @@
 {
-  "name": "Bulk Phone Number Validation",
+  "name": "Phone Validation",
   "brand": "NumDetect",
   "repository": "numdetect/phone-bulk-validation-api",
   "description": "A clean list is the start of the next campaign. Check validity and activation signals to find records worth reviewing, then feed the structured result into list cleaning, CRM updates and pre-outreach checks so every action starts with clearer data.",
@@ -31,7 +31,7 @@
   },
   "limits": {
     "min_items": 500,
-    "max_items": 100000,
+    "max_items": 500000,
     "poll_interval_seconds": 30,
     "file_formats": [
       "txt",
@@ -40,14 +40,14 @@
   },
   "result_fields": [
     {
-      "name": "number",
-      "example": "17253100591",
-      "description": "The original submitted E.164 number. Use it to match and trace the result back to the uploaded record; the field alone does not establish that a number can be contacted."
+      "name": "identifier",
+      "example": "12345678900",
+      "description": "Submitted identifier, used to join the result to the input. Phone identifiers include their country code."
     },
     {
       "name": "activated",
-      "example": "yes",
-      "description": "Whether this check returned an activation signal. Combine it with your own consent, source and recent-interaction data for review or segmentation, not as a guarantee of connection or delivery."
+      "example": "true",
+      "description": "The determined positive/negative signal for this product; interpret it in the product context."
     }
   ],
   "statuses": [
@@ -58,5 +58,5 @@
   "pricing_url": "https://numdetect.com/pricing",
   "maintainer": "NumDetect",
   "license": "MIT",
-  "last_reviewed": "2026-09-22"
+  "last_reviewed": "2026-10-30"
 }
